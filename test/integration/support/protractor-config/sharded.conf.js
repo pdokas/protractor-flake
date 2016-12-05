@@ -2,6 +2,8 @@
 
 var JOB_NAME = 'Flake';
 
+console.log('SAUCE', process.env.SAUCE_USERNAME)
+
 exports.config = {
   specs: [
     '../flakey-test.js',
