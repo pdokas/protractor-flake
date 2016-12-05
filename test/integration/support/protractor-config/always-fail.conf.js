@@ -15,6 +15,9 @@ exports.config = {
     maxInstances: 2
   },
 
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
+
   baseUrl: 'http://localhost:3000/',
 
   directConnect: true,

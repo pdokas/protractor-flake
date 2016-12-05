@@ -9,9 +9,12 @@ exports.config = {
   ],
 
   capabilities: {
-    browserName: process.platform === 'darwin' ? 'chrome' : 'firefox',
+    browserName: 'firefox',
     name: JOB_NAME
   },
+
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   baseUrl: 'http://localhost:3000/',
 
