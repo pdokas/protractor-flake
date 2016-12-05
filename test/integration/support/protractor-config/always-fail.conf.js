@@ -9,7 +9,7 @@ exports.config = {
   ],
 
   capabilities: {
-    browserName: process.platform === 'darwin' ? 'chrome' : 'firefox',
+    browserName: 'chrome',
     name: JOB_NAME,
     shardTestFiles: true,
     maxInstances: 2
@@ -19,8 +19,6 @@ exports.config = {
   sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   baseUrl: 'http://localhost:3000/',
-
-  directConnect: true,
 
   framework: 'jasmine',
 

@@ -13,11 +13,11 @@ function configPath (filename) {
 function spawnFlake (flakeArgs = []) {
   let proc = spawn('./bin/protractor-flake', flakeArgs)
   proc.stdout.on('data', (buff) => {
-    process.stdout.write(buff.toString())
+    process.stdout.write(`spawn stdout: ${buff.toString()}`)
   })
 
-  proc.stderr.on('data', (x) => {
-    process.stdout.write(x.toString())
+  proc.stderr.on('data', (buff) => {
+    process.stdout.write(`spawn stderr: ${buff.toString()}`)
   })
 
   return proc
