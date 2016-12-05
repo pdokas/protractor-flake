@@ -25,6 +25,7 @@ function spawnFlake (flakeArgs = []) {
 
 describe('Protractor Flake Executable', function () {
   before((done) => {
+    console.log('PORT', process.env.PORT)
     server.listen({port: process.env.PORT}, () => {
       done()
     })

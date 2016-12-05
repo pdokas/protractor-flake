@@ -55,10 +55,9 @@ module.exports = {
     options = options || {}
     var port = options.port || '3000'
 
-    if (options.shouldLog) {
-      app.use(require('morgan')('combined'))
-      app.set('log', true)
-    }
+
+    app.use(require('morgan')('combined'))
+    app.set('log', true)
 
     server = app.listen(port, function () {
       console.log('Test server listening at ', port)
