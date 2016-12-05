@@ -53,7 +53,7 @@ app.get('/flake/:timesToFlake', function (req, res, next) {
 module.exports = {
   listen: function (options, callback) {
     options = options || {}
-    var port = options.port || '3000'
+    var port = options.port || '8080'
 
 
     app.use(require('morgan')('combined'))
