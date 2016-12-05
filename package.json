@@ -11,7 +11,7 @@
     "lint": "standard",
     "test": "npm run lint && npm run test:unit && npm run test:integration",
     "test:unit": "mocha --opts test/unit/mocha.opts",
-    "test:integration": "./bin/protractor-flake -- test/integration/support/protractor-config/sharded.conf.js",
+    "test:integration": "npm run build && mocha --opts test/integration/mocha.opts --slow 30001 --timeout 30000 --reporter tap",
     "test:dev": "mocha --watch --opts test/unit/mocha.opts",
     "build": "babel -d dist src",
     "prepublish": "npm run build",
