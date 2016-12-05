@@ -10,9 +10,7 @@ exports.config = {
 
   capabilities: {
     browserName: process.platform === 'darwin' ? 'chrome' : 'firefox',
-    name: JOB_NAME,
-    shardTestFiles: true,
-    maxInstances: 2
+    name: JOB_NAME
   },
 
   baseUrl: 'http://localhost:3000/',
