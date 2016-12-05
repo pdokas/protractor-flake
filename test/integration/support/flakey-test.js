@@ -4,6 +4,10 @@ describe('a flakey integration test', function () {
   it('fails, in a horribly consistent manner', function () {
     browser.get(`/flake/${TIMES_TO_FLAKE}`)
 
+    $('body').getText().then(function (text) {
+      console.log('TEXT', text)
+    })
+
     expect($('body').getText()).toEqual('Hello.')
   })
 })
