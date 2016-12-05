@@ -59,7 +59,10 @@ module.exports = {
     app.use(require('morgan')('combined'))
     app.set('log', true)
 
-    server = app.listen(port, function () {
+    server = app.listen(port, function (err, x) {
+      if (err || x) {
+        console.log(`ERR ${err} X: ${x}`)
+      }
       console.log('Test server listening at ', port)
       if (callback) { callback() }
     })
