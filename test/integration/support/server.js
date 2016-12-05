@@ -36,6 +36,8 @@ app.get('/flake/:timesToFlake', function (req, res, next) {
 
     req.logger('Flaked', timesFlaked, '/', timesToFlake)
 
+    console.log('LOG', timesFlaked)
+
     if (timesFlaked >= timesToFlake) {
       res.send('<div id="success">Success!</div>')
     } else {
