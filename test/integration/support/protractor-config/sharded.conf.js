@@ -17,8 +17,6 @@ exports.config = {
 
   baseUrl: 'http://localhost:3000/',
 
-  directConnect: true,
-
   framework: 'jasmine',
 
   allScriptsTimeout: 10000,
