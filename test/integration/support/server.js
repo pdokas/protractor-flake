@@ -66,6 +66,10 @@ module.exports = {
       console.log('Test server listening at ', port)
       if (callback) { callback() }
     })
+
+    server.on('error', function (e) {
+      console.log('express error', e)
+    })
   },
   close: function () {
     server.close()
