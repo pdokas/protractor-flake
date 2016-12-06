@@ -6,10 +6,6 @@ CONNECT_URL="https://saucelabs.com/downloads/sc-4.4.1-linux.tar.gz"
 CONNECT_DIR="/tmp/sauce-connect-$RANDOM"
 CONNECT_DOWNLOAD="sc-4.4.1-linux.tar.gz"
 
-CONNECT_LOG="$LOGS_DIR/sauce-connect"
-CONNECT_STDOUT="$LOGS_DIR/sauce-connect.stdout"
-CONNECT_STDERR="$LOGS_DIR/sauce-connect.stderr"
-
 # Get Connect and start it
 mkdir -p $CONNECT_DIR
 cd $CONNECT_DIR
@@ -34,8 +30,7 @@ echo "Starting Sauce Connect in the background, logging into:"
 echo "  $CONNECT_LOG"
 echo "  $CONNECT_STDOUT"
 echo "  $CONNECT_STDERR"
-sauce-connect/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY $ARGS \
-  2> $CONNECT_STDERR 1> $CONNECT_STDOUT &
+sauce-connect/bin/sc -u $SAUCE_USERNAME -k $SAUCE_ACCESS_KEY $ARGS &
 
 # If you need to debug sauce connect, use the full output like so:
 #
