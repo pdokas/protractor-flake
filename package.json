@@ -35,6 +35,7 @@
     "cookie-parser": "^1.3.5",
     "express": "^4.13.1",
     "express-session": "^1.11.3",
+    "http-server": "*",
     "mocha": "^2.2.5",
     "morgan": "^1.6.1",
     "mversion": "^1.10.0",
