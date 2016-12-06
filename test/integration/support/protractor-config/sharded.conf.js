@@ -2,6 +2,9 @@
 
 var JOB_NAME = 'Flake' + (process.env.TRAVIS_JOB_NUMBER || '');
 
+console.log('SAUCE_USERNAME', process.env.SAUCE_USERNAME)
+console.log('SAUCE KEY', process.env.SAUCE_ACCESS_KEY.slice(0, 3))
+
 exports.config = {
   specs: [
     '../flakey-test.js',
