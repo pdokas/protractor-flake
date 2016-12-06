@@ -1,6 +1,6 @@
 'use strict';
 
-var JOB_NAME = 'Flake';
+var JOB_NAME = 'Flake' + (process.env.TRAVIS_JOB_NUMBER || '');
 
 exports.config = {
   specs: [
@@ -8,15 +8,15 @@ exports.config = {
     '../passing-test.js'
   ],
 
+  sauceUser: process.env.SAUCE_USERNAME,
+  sauceKey: process.env.SAUCE_ACCESS_KEY,
+
   capabilities: {
     browserName: 'chrome',
     name: JOB_NAME,
     shardTestFiles: true,
     maxInstances: 2
   },
-
-  sauceUser: process.env.SAUCE_USERNAME,
-  sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   baseUrl: 'http://localhost:3000',
 

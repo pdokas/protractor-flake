@@ -15,6 +15,7 @@
     "test:dev": "mocha --watch --opts test/unit/mocha.opts",
     "build": "babel -d dist src",
     "prepublish": "npm run build",
+    "debug": "protractor test/integration/support/protractor-config/sharded.conf.js",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "bin": "./bin/protractor-flake",
