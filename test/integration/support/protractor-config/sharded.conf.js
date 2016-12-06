@@ -13,12 +13,10 @@ exports.config = {
 
   capabilities: {
     browserName: 'chrome',
-    name: JOB_NAME,
-    shardTestFiles: true,
-    maxInstances: 2
+    name: JOB_NAME
   },
 
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'http://localhost:3000/',
 
   framework: 'jasmine',
 
