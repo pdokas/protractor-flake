@@ -16,7 +16,7 @@ exports.config = {
   sauceKey: process.env.SAUCE_ACCESS_KEY,
 
   capabilities: {
-    browserName: 'firefox',
+    browserName: 'chrome',
     platform: 'OS X 10.9',
     version: 'latest',
     name: JOB_NAME,
