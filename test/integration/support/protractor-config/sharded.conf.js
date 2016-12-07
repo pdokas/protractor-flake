@@ -20,7 +20,7 @@ exports.config = {
     name: JOB_NAME
   },
 
-  baseUrl: 'http://www.google.com',
+  baseUrl: 'http://localhost:3000',
 
   framework: 'jasmine',
 
