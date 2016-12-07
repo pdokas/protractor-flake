@@ -20,7 +20,7 @@ exports.config = {
     platform: 'OS X 10.9',
     version: 'latest',
     name: JOB_NAME,
-    tunnel-identifier: JOB_NUMBER
+    'tunnel-identifier': JOB_NUMBER
   },
 
   baseUrl: 'http://127.0.0.1:3000',
