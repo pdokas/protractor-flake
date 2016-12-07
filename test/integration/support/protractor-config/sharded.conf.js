@@ -16,6 +16,7 @@ exports.config = {
 
   capabilities: {
     browserName: 'chrome',
+    platform: 'OS X 10.9',
     version: 'latest',
     name: JOB_NAME
   },
