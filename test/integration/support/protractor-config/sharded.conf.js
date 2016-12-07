@@ -16,6 +16,7 @@ exports.config = {
 
   capabilities: {
     browserName: 'chrome',
+    version: 'latest',
     name: JOB_NAME
   },
 
