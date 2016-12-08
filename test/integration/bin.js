@@ -44,13 +44,13 @@ describe('Protractor Flake Executable', function () {
     })
   })
 
-  // it('integration: Exits successfully if test passes before max limit is reached', (done) => {
-  //   let proc = spawnFlake(['--max-attempts', '3', '--', configPath('sharded')])
-  //   proc.on('close', (status) => {
-  //     expect(status).to.equal(0)
-  //     done()
-  //   })
-  // })
+  it('integration: Exits successfully if test passes before max limit is reached', (done) => {
+    let proc = spawnFlake(['--max-attempts', '3', '--', configPath('sharded')])
+    proc.on('close', (status) => {
+      expect(status).to.equal(0)
+      done()
+    })
+  })
 
   it('integration: exits unsuccessfully if test fails outside of max limit', (done) => {
     let proc = spawnFlake(['--max-attempts', '1', '--', configPath('always-fail')])
@@ -60,17 +60,17 @@ describe('Protractor Flake Executable', function () {
     })
   })
 
-  // it('integration: exits with error if invalid parser is specified', (done) => {
-  //   let output = ''
-  //   let proc = spawnFlake(['--max-attempts', '3', '--parser', 'foo', '--', configPath('sharded')])
-  //   proc.stderr.on('data', (buff) => {
-  //     output += buff.toString()
-  //   })
-  //
-  //   proc.on('close', (status) => {
-  //     expect(status).to.equal(1)
-  //     expect(output).to.contain('Error: Invalid Parser Specified: foo')
-  //     done()
-  //   })
-  // })
+  it('integration: exits with error if invalid parser is specified', (done) => {
+    let output = ''
+    let proc = spawnFlake(['--max-attempts', '3', '--parser', 'foo', '--', configPath('sharded')])
+    proc.stderr.on('data', (buff) => {
+      output += buff.toString()
+    })
+
+    proc.on('close', (status) => {
+      expect(status).to.equal(1)
+      expect(output).to.contain('Error: Invalid Parser Specified: foo')
+      done()
+    })
+  })
 })
